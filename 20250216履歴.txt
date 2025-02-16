@@ -1,0 +1,128 @@
+PS C:\Users\tatys> mkdir kadai_005
+
+
+    ディレクトリ: C:\Users\tatys
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2025/02/15     20:03                kadai_005
+
+
+PS C:\Users\tatys\kadai_005> echo kadai_005.txt
+ 
+Hello,word!
+sakuma,masahito
+
+
+
+PS C:\Users\tatys\kadai_005> git add kadai_005.txt
+PS C:\Users\tatys\kadai_005> git commit -m "最初のコミット"
+[main (root-commit) 0b18d99] 最初のコミット
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 kadai_005.txt
+
+PS C:\Users\tatys\kadai_005> git add kadai_005.txt
+PS C:\Users\tatys\kadai_005> git commit -m "tesuto"
+[main 2576805] tesuto
+ 1 file changed, 2 insertions(+)
+PS C:\Users\tatys\kadai_005> 
+
+PS C:\Users\tatys\kadai_005> git log
+commit 25768054f9f2b2ab45ac1107fa25db802e7dc4be (HEAD -> main)
+Author: Bit-sakuma <tatysakuma@gmail.com>
+Date:   Sat Feb 15 20:59:08 2025 +0900
+
+    tesuto
+
+commit 0b18d991eec139dd150b058d47f49954af151cae
+Author: Bit-sakuma <tatysakuma@gmail.com>
+Date:   Sat Feb 15 20:38:08 2025 +0900
+
+    最初のコミット
+PS C:\Users\tatys\kadai_005>
+
+PS C:\Users\tatys\kadai_005> git log --oneline
+2576805 (HEAD -> main) tesuto
+0b18d99 最初のコミット
+PS C:\Users\tatys\kadai_005> 
+
+PS C:\Users\tatys\kadai_005> git remote add origin git@github.com:Bit-sakuma/git-basic-kadai.git
+PS C:\Users\tatys\kadai_005> git remote -v
+origin  git@github.com:Bit-sakuma/git-basic-kadai.git (fetch)
+origin  git@github.com:Bit-sakuma/git-basic-kadai.git (push)
+PS C:\Users\tatys\kadai_005> 
+
+PS C:\users\tatys\kadai_005>  ssh-keygen -t rsa -C  tatysakuma@gmail.com
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\tatys/.ssh/id_rsa):       
+C:\Users\tatys/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in C:\Users\tatys/.ssh/id_rsa
+Your public key has been saved in C:\Users\tatys/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:wpQaNeYblwrt7zPpWef3CmoKNqplm3LBfyhrugoUmNo tatysakuma@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|      +          |
+|..   = o .       |
+|o.  o * o        |
+|...  B =         |
+|..E.. * S        |
+|.   o  o         |
+|.   oo+.... o    |
+|. .o+=o+=o.+ ..  |
+|..+B=o o==. ...o.|
++----[SHA256]-----+
+PS C:\users\tatys\kadai_005> cat  C:\Users\tatys/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrclyWU9UOKWPzBFQnZ85Kn+UXmMk+eplXrWMojnHGGj3deZNeyNHz6ovH9u+jCWGW5X0xTw+JxVqvzpXKbd+F0CYZIWfqODCbkN6cMqEyYbT4XY+yyhaAtK5eJniEz/KSgIl4IN94B8pfXB4yDsZwMbwH9JLG+38pEQCZXtfkWEPb2an0f2Kg3LMW77W9o7FCRKTUVe1ZZfPn7LDIW44NeMUUUFe95KTXzVXVfb+wCY/fXPuXwwNUvDcxUSQ2csaXJ77muQ7bta218JYngifWF81BCBq4dfgFXfDD2VynN7y15jWViuOI8u6CQZTj9IDJ3eMg3xp+TOP7Z+QMgb5/LoJqi/2xV3zO6ZUOQr+RCJByHTT5+A/892d9M8S4afDgoAExeUkmnXTJAxyz82V3jxYT4tVHtDi3YeEf2Q+WHiKQq9Po6Q78IL5Sj8AAPdaaO3+tnDIz+Vf23kuEMAfTYNG9V9iymS58jRsj5MnluZTvUEjY96DFu+725fC666s= tatysakuma@gmail.com
+PS C:\users\tatys\kadai_005> ssh -T git@github.com
+Enter passphrase for key 'C:\Users\tatys/.ssh/id_rsa': 
+Hi Bit-sakuma! You've successfully authenticated, but GitHub does not provide shell access.
+
+PS C:\users\tatys\kadai_005> git remote -v
+origin  git@github.com:Bit-sakuma/git-basic-kadai.git (fetch)
+origin  git@github.com:Bit-sakuma/git-basic-kadai.git (push)
+PS C:\users\tatys\kadai_005> git remote remove origin
+PS C:\users\tatys\kadai_005> git remote add origin git@github.com:Bit-sakuma/git-basic-kadai.git
+PS C:\users\tatys\kadai_005> git remote -v
+origin  git@github.com:Bit-sakuma/git-basic-kadai.git (fetch)
+origin  git@github.com:Bit-sakuma/git-basic-kadai.git (push)
+PS C:\users\tatys\kadai_005>                                
+
+PS C:\users\tatys\kadai_005> git pull origin main
+Enter passphrase for key '/c/Users/tatys/.ssh/id_rsa': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 5 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 1.00 KiB | 257.00 KiB/s, done.
+From github.com:Bit-sakuma/git-basic-kadai
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+fatal: refusing to merge unrelated histories
+
+PS C:\users\tatys\kadai_005> git pull origin main --allow-unrelated-histories
+Enter passphrase for key '/c/Users/tatys/.ssh/id_rsa': 
+From github.com:Bit-sakuma/git-basic-kadai
+ * branch            main       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+PS C:\users\tatys\kadai_005> 
+PS C:\users\tatys\kadai_005> git push -u origin main
+Enter passphrase for key '/c/Users/tatys/.ssh/id_rsa': 
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (7/7), 626 bytes | 626.00 KiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:Bit-sakuma/git-basic-kadai.git
+   eb3eee0..765a304  main -> main
+branch 'main' set up to track 'origin/main'.
+
+PS C:\users\tatys\kadai_005> git push
+Enter passphrase for key '/c/Users/tatys/.ssh/id_rsa': 
+Everything up-to-date
